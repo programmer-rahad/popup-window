@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup window with Javascript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+            background-image: url('images/7.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            position: relative;
+            display: table;
+            padding: 15px;
+            z-index: 1;
+            /* transition: .5s; */
+            transition: .5s;
+        }
+
+        section:before {
+            position: absolute;
+            content: " ";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .4);
+            z-index: -1;
+        }
+
+        section .center {
+            color: #fff;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        section .center h2 {
+            font-size: 40px;
+            font-family: sans-serif;
+        }
+
+        section .center button {
+            background-color: #5368F8;
+            font-weight: 700;
+            border: 0;
+            padding: 13px 20px;
+            color: #fff;
+            font-size: 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 7px;
+            outline: 0;
+        }
+
+        .modal {
+            padding: 30px;
+            background: #fff;
+            color: #000;
+            font-family: Arial, sans-serif;
+            line-height: 24px;
+            font-size: 18px;
+            letter-spacing: .4px;
+            width: 60%;
+            padding-bottom: 65px;
+            border-radius: 10px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -100%);
+        }
+
+        @media(max-width: 991px) {
+            .modal {
+                width: 75%;
+            }
+
+            section .center h2 { 
+                margin-bottom: 20px;
+                font-size: 32px;
+                line-height: 40px;
+            }
+        }
+
+        @media(max-width: 767px) {
+            .modal {
+                width: 95%;
+                padding: 20px;
+                padding-bottom: 60px;
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+
+
+        span.close-btn {
+            font-size: 50px;
+            font-weight: 700;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="center">
+            <h2>Click the button below to popup a window!</h2>
+            <button class="modal-btn" type="button">Click for modal</button>
+        </div>
+    </section>
+
+    <div class="modal">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis itaque assumenda voluptatibus dolorum unde
+            error cumque magnam exercitationem suscipit alias qui ipsa, ex, quidem tenetur deleniti maiores odit
+            impedit facere esse atque eligendi commodi. Iure atque saepe quas ullam provident perferendis
+            repudiandae et ex? Quidem a laboriosam facere accusantium minima excepturi itaque doloribus! Non
+            deserunt laudantium voluptas veritatis velit, nobis libero odit corporis blanditiis ad, distinctio
+            possimus eum accusantium sapiente recusandae quaerat tempora rerum! Error numquam, assumenda laborum,
+            ratione nihil eveniet quam nostrum vel eveniet quam nostrum vel </p>
+        <span class="close-btn" draggable="true">&times;</span>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
